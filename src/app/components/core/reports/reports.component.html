@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="https://chefcompany.co/sites/all/themes/chef/logo.svg" alt="">
+</nav>
+<div class="container">
+  <button routerLink="/home" class="btn btn-danger" style="float: left !important;margin-left: 10px;"><i class="fas fa-arrow-left"></i></button>
+  <br>
+  <br>
+    <h3>Reporte de Clientes y Facturas</h3>
+          <div class="container">
+          </div>
+          <br>
+          <br>
+          <div class="container">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Id Factura</th>  
+                  <th scope="col">Id Cliente</th>  
+                  <th scope="col">Nombres Cliente</th>  
+                  <th scope="col">Direccion Facturacion</th>  
+                  <th scope="col">Direccion Correspondencia</th>  
+                  <th scope="col">Estrato</th>                  
+                  <th scope="col">Valor</th>
+                  <th scope="col">Periodo</th>
+                  <th scope="col">Consumo</th>
+                  <th scope="col">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let factura of facturasF">
+                  <th scope="row">{{factura.id_factura}}</th>    
+                  <td>{{factura.id_cliente}}</td> 
+                  <td>{{factura.nombres}}</td> 
+                  <td>{{factura.direccion_facturacion}}</td> 
+                  <td>{{factura.direccion_correspondencia}}</td> 
+                  <td>{{factura.estrato}}</td>              
+                  <td>{{factura.valor}}</td>
+                  <td>{{factura.periodo}}</td>
+                  <td>{{factura.consumo}}</td>
+                  <td>{{factura.estado}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+</div>

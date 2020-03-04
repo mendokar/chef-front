@@ -1,1 +1,2 @@
-<router-outlet></router-outlet>
+<app-login *ngIf="viewLogin" (viewComponents)="viewComponent($event)"></app-login>
+<router-outlet *ngIf="viewComponents"></router-outlet>

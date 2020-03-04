@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { InvoiceComponent } from './components/core/invoice/invoice.component';
 import { PaymentsComponent } from './components/core/payments/payments.component';
+import { HistoryComponent } from './components/core/history/history.component';
+import { ReportsComponent } from './components/core/reports/reports.component';
+import { WalletComponent } from './components/core/wallet/wallet.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,10 @@ import { PaymentsComponent } from './components/core/payments/payments.component
     HomeComponent,
     CustomersComponent,
     InvoiceComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    HistoryComponent,
+    ReportsComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,

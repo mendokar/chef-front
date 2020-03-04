@@ -5,27 +5,7 @@
   <button routerLink="/home" class="btn btn-danger" style="float: left !important;margin-left: 10px;"><i class="fas fa-arrow-left"></i></button>
   <br>
   <br>
-    <h3>Facturas</h3>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Crear</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Consultar</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <h3>Facturas</h3>
-         <div class="container">
-          <dynamic-form-builder (onSubmit)="onSubmit($event)" [fields]="getFields()">
-          </dynamic-form-builder>
-         </div>
-
-
-        </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <h3>Consultar Facturas</h3>
+    <h3>Historial Consumo KW</h3>
           <div class="container">
             <div class="row">
               <div class="col-sm">
@@ -44,8 +24,7 @@
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th scope="col">Id Factura</th>
-                  <th scope="col">Id Cliente</th>
+                  <th scope="col">Id Factura</th>                  
                   <th scope="col">Valor</th>
                   <th scope="col">Periodo</th>
                   <th scope="col">Consumo</th>
@@ -54,8 +33,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let factura of facturas">
-                  <th scope="row">{{factura.id_factura}}</th>
-                  <td>{{factura.id_cliente}}</td>
+                  <th scope="row">{{factura.id_factura}}</th>                  
                   <td>{{factura.valor}}</td>
                   <td>{{factura.periodo}}</td>
                   <td>{{factura.consumo}}</td>
@@ -64,7 +42,4 @@
               </tbody>
             </table>
           </div>
-        </div>
-
-      </div>
 </div>

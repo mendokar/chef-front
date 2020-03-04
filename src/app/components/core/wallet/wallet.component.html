@@ -1,31 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="https://chefcompany.co/sites/all/themes/chef/logo.svg" alt="">
+    <img src="https://chefcompany.co/sites/all/themes/chef/logo.svg" alt="">    
 </nav>
+
 <div class="container">
   <button routerLink="/home" class="btn btn-danger" style="float: left !important;margin-left: 10px;"><i class="fas fa-arrow-left"></i></button>
-  <br>
-  <br>
-    <h3>Facturas</h3>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Crear</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Consultar</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <h3>Facturas</h3>
-         <div class="container">
-          <dynamic-form-builder (onSubmit)="onSubmit($event)" [fields]="getFields()">
-          </dynamic-form-builder>
-         </div>
-
-
-        </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <h3>Consultar Facturas</h3>
+<br>
+<br>
+    <h3>Consultar Facturas No pagas o Canceladas</h3>
           <div class="container">
             <div class="row">
               <div class="col-sm">
@@ -64,7 +45,4 @@
               </tbody>
             </table>
           </div>
-        </div>
-
-      </div>
 </div>

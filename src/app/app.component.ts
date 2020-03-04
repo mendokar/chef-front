@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'energiapp';
+
+  viewComponents: boolean = false;  
+  viewLogin:boolean = true;
+
+
+   /**
+   * viewComponent
+   */
+  public viewComponent(confirmation: boolean) {
+    this.viewComponents = confirmation;
+    this.viewLogin = false;
+  }
 }

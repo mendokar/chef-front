@@ -5,14 +5,20 @@ import { HomeComponent } from './components/admin/home/home.component';
 import { CustomersComponent } from './components/core/customers/customers.component';
 import { InvoiceComponent } from './components/core/invoice/invoice.component';
 import { PaymentsComponent } from './components/core/payments/payments.component';
+import { HistoryComponent } from './components/core/history/history.component';
+import { ReportsComponent } from './components/core/reports/reports.component';
+import { WalletComponent } from './components/core/wallet/wallet.component';
 
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
+  {path:'',component:LoginComponent},
   {path:'home',component:HomeComponent},
 {path:'clientes',component:CustomersComponent},
 {path:'facturas',component:InvoiceComponent},
-{path:'',component:PaymentsComponent}];
+{path:'pagos',component:PaymentsComponent},
+{path:'historial',component:HistoryComponent},
+{path:'reportes',component:ReportsComponent},
+{path:'cartera',component:WalletComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
