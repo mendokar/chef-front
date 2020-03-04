@@ -14,12 +14,179 @@
           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Editar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Eliminar</a>
+            <a class="nav-link" id="delete-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="delete" aria-selected="false">Eliminar</a>
           </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">1...</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2...</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3...</div>
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3>Clientes</h3>
+         <div class="container">
+          <dynamic-form-builder (onSubmit)="onSubmit($event)" [fields]="getFields()">
+          </dynamic-form-builder>
+         </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h3>Consultar Clientes</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <label for="">Buscar Cliente</label>
+                <input class="form-control" [(ngModel)]="cliente" type="text" name="id_cliente" id="id_cliente">
+              </div>
+              <div class="col-sm">
+                <br>
+                <button (click)="consultarCliente()" style="margin-top: 5px;" class="btn btn-danger">Buscar</button>
+              </div>              
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="container">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Id Cliente</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">Direccion facturacion</th>
+                  <th scope="col">Direccion correspondencia</th>
+                  <th scope="col">Estrato</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clientes">
+                  <th scope="row">{{cliente.id_cliente}}</th>
+                  <td>{{cliente.nombres}}</td>
+                  <td>{{cliente.direccion_facturacion}}</td>
+                  <td>{{cliente.direccion_correspondencia}}</td>
+                  <td>{{cliente.estrato}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+          <h3>Actualizar Cliente</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <label for="">Buscar Cliente</label>
+                <input class="form-control" [(ngModel)]="cliente" type="text" name="id_cliente" id="id_cliente">
+              </div>
+              <div class="col-sm">
+                <br>
+                <button (click)="consultarCliente()" style="margin-top: 5px;" class="btn btn-danger">Buscar</button>
+              </div>              
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="container">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Id Cliente</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">Direccion facturacion</th>
+                  <th scope="col">Direccion correspondencia</th>
+                  <th scope="col">Estrato</th>
+                  <th scope="col">Actualizar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clientes">
+                  <th scope="row">{{cliente.id_cliente}}</th>
+                  <td>{{cliente.nombres}}</td>
+                  <td>{{cliente.direccion_facturacion}}</td>
+                  <td>{{cliente.direccion_correspondencia}}</td>
+                  <td>{{cliente.estrato}}</td>
+                  <td><button (click)="editarCliente(cliente)" class="btn btn-warning">Actualizar</button> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
+
+          <h3>Eliminar Cliente</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <label for="">Buscar Cliente</label>
+                <input class="form-control" [(ngModel)]="cliente" type="text" name="id_cliente" id="id_cliente">
+              </div>
+              <div class="col-sm">
+                <br>
+                <button (click)="consultarCliente()" style="margin-top: 5px;" class="btn btn-danger">Buscar</button>
+              </div>              
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="container">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Id Cliente</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">Direccion facturacion</th>
+                  <th scope="col">Direccion correspondencia</th>
+                  <th scope="col">Estrato</th>
+                  <th scope="col">Actualizar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clientes">
+                  <th scope="row">{{cliente.id_cliente}}</th>
+                  <td>{{cliente.nombres}}</td>
+                  <td>{{cliente.direccion_facturacion}}</td>
+                  <td>{{cliente.direccion_correspondencia}}</td>
+                  <td>{{cliente.estrato}}</td>
+                  <td><button (click)="eliminarCliente(cliente)" class="btn btn-danger">Eliminar</button> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
       </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Actualizar cliente {{id_cliente}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="">
+          <label for="">Nombres</label>
+          <input [(ngModel)]="nombres" class="form-control" type="text">
+        </div>
+        <div class="">
+          <label for="">Direccion facturacion</label>
+          <input [(ngModel)]="direccion_facturacion" class="form-control" type="text">
+        </div>
+        <div class="">
+          <label for="">Direccion correspondencia</label>
+          <input [(ngModel)]="direccion_correspondencia" class="form-control" type="text">
+        </div>
+        <div class="">
+          <label for="">Estrato</label>
+          <input [(ngModel)]="estrato" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button (click)="actualizarCliente()" type="button" class="btn btn-danger">Actualizar</button>
+      </div>
+    </div>
+  </div>
 </div>

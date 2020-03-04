@@ -9,13 +9,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/admin/login/login.component';
 import { HomeComponent } from './components/admin/home/home.component';
 import { CustomersComponent } from './components/core/customers/customers.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+import { InvoiceComponent } from './components/core/invoice/invoice.component';
+import { PaymentsComponent } from './components/core/payments/payments.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CustomersComponent
+    CustomersComponent,
+    InvoiceComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +30,8 @@ import { CustomersComponent } from './components/core/customers/customers.compon
     ReactiveFormsModule,
     DynamicFormBuilderModule,
     HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
